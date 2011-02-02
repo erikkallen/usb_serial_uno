@@ -1,20 +1,9 @@
-#include <iostream.h>
-#include <math.h>
+# Operators are really method invocations.
+a = 10
+b = 3.*(a).+(2)
+Kernel::printf("%d %d\n", a, b);
 
-float asqrt (float x, float precision) {
-  float guess;
-
-  guess = 1.0;
-  while (fabs(guess*guess-x) >= precision) {
-    guess = 0.5 * (guess + (x / guess));
-  }
-  return (guess);
-}
-
-int main () {
-  float x, precision; 
-  cout << "Enter a real number and the precision: ";
-  cin >> x >> precision;
-  cout << "sqrt(" << x << ") is almost " << asqrt(x,precision) << endl;
-  return(0);
-}
+# Type is still dynamic.
+b = String.new("A string")
+c = 'Another String'
+Kernel.print(b.+(" and ")::+(c).+("\n"))
